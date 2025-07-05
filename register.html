@@ -7,20 +7,61 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Belong & Begin</h1>
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="register.html">Register</a> |
-            <a href="facility.html">Facility</a> |
-            <a href="impact.html">Our Impact</a> |
-            <a href="events.html">Events</a> |
-            <a href="donate.html">Donate</a> |
-            <a href="media.html">Media</a> |
-            <a href="contact.html">Contact</a>
-        </nav>
-        <hr/>
-    </header>
+
+<header>
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 10px 20px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="index.html">
+                <img src="belongandbeginlogo.jpg" alt="Belong & Begin Logo" style="max-width: 60px; height: auto;" />
+            </a>
+            <h1 style="margin: 0;">Belong & Begin</h1>
+        </div>
+        <form id="searchForm" style="display: flex; align-items: center; gap: 5px;">
+            <input type="text" id="searchInput" placeholder="Search this site..." aria-label="Search" style="padding: 5px; font-size: 1rem;" />
+            <button type="submit" style="padding: 5px 10px; font-size: 1rem; cursor: pointer;">Search</button>
+        </form>
+    </div>
+    <nav style="text-align: center; padding: 10px 0;">
+        <a href="index.html">Home</a> |
+        <a href="register.html">Register</a> |
+        <a href="facility.html">Facility</a> |
+        <a href="impact.html">Our Impact</a> |
+        <a href="events.html">Events</a> |
+        <a href="donate.html">Donate</a> |
+        <a href="media.html">Media</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+    <hr/>
+</header>
+
+<script>
+// site search
+const pages = [
+    { name: "Home", url: "index.html", keywords: ["home", "mission", "vision", "belong and begin"] },
+    { name: "Register", url: "register.html", keywords: ["register", "volunteer", "sign up"] },
+    { name: "Facility", url: "facility.html", keywords: ["facility", "accessible", "games", "sensory"] },
+    { name: "Our Impact", url: "impact.html", keywords: ["impact", "community", "testimonials"] },
+    { name: "Events", url: "events.html", keywords: ["events", "upcoming", "schedule"] },
+    { name: "Donate", url: "donate.html", keywords: ["donate", "sponsor", "support"] },
+    { name: "Media", url: "media.html", keywords: ["media", "flyers", "photos"] },
+    { name: "Contact", url: "contact.html", keywords: ["contact", "email", "reach out"] },
+];
+
+document.getElementById('searchForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    for (let page of pages) {
+        for (let keyword of page.keywords) {
+            if (query.includes(keyword)) {
+                window.location.href = page.url;
+                return;
+            }
+        }
+    }
+    alert('No results found. Please try another keyword.');
+});
+</script>
+
 
     <main>
         <section>
