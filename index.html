@@ -1,45 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link rel="stylesheet" href="style.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>belong & begin</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Belong & Begin</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header>
-    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 10px 20px;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <a href="index.html">
-                <img src="belong and beginlogo.jpg" alt="Belong & Begin Logo" style="max-width: 600px; height: auto;" />
-            </a>
-            <h1 style="margin: 0;">Belong & Begin</h1>
-        </div>
-        <form id="searchForm" style="display: flex; align-items: center; gap: 5px;">
-            <input type="text" id="searchInput" placeholder="Search this site..." aria-label="Search" style="padding: 5px; font-size: 1rem;" />
-            <button type="submit" style="padding: 5px 10px; font-size: 1rem; cursor: pointer;">Search</button>
-        </form>
-    </div>
-  <nav>
-  <ul class="navbar">
-    <li><a href="index.html">Home</a></li>
+  <img src="assets/belongandbeginlogo.jpg" alt="Belong & Begin Logo" class="logo" />
+  <h1>Belong & Begin</h1>
+</header>
 
+<nav>
+  <ul class="navbar">
+    <li class="dropdown">
+      <a href="index.html">Home</a>
+      <ul class="dropdown-content">
+        <li><a href="index.html#mission">Our Mission</a></li>
+        <li><a href="index.html#values">Our Values</a></li>
+      </ul>
+    </li>
     <li class="dropdown">
       <a href="facility.html">Facility</a>
       <ul class="dropdown-content">
-        <li><a href="facility.html#photos">View Facility Photos</a></li>
-        <li><a href="facility.html#accessibility">Accessibility Features</a></li>
-        <li><a href="facility.html#gamezones">Game Zones</a></li>
+        <li><a href="facility.html#photos">Photos</a></li>
+        <li><a href="facility.html#accessibility">Accessibility</a></li>
+        <li><a href="facility.html#zones">Game Zones</a></li>
       </ul>
     </li>
-
-    <li><a href="impact.html">Our Impact</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="donate.html">Donate</a></li>
-    <li><a href="media.html">Media</a></li>
-
+    <li class="dropdown">
+      <a href="impact.html">Our Impact</a>
+      <ul class="dropdown-content">
+        <li><a href="impact.html#stories">Stories</a></li>
+        <li><a href="impact.html#reviews">Reviews</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="events.html">Events</a>
+      <ul class="dropdown-content">
+        <li><a href="events.html#upcoming">Upcoming</a></li>
+        <li><a href="events.html#calendar">Calendar</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="donate.html">Donate</a>
+      <ul class="dropdown-content">
+        <li><a href="donate.html#ways">Ways to Donate</a></li>
+        <li><a href="donate.html#sponsors">Our Sponsors</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="media.html">Media</a>
+      <ul class="dropdown-content">
+        <li><a href="media.html#gallery">Gallery</a></li>
+        <li><a href="media.html#press">Press</a></li>
+      </ul>
+    </li>
     <li class="dropdown">
       <a href="contact.html">Contact</a>
       <ul class="dropdown-content">
@@ -51,77 +69,27 @@
   </ul>
 </nav>
 
-    <hr/>
-</header>
+<section class="hero">
+  <h2>Building Inclusion, One Block at a Time</h2>
+  <p>Creating a welcoming, accessible environment for kids of all abilities to play, learn, and grow together.</p>
+  <a href="register.html" class="btn">Get Involved</a>
+</section>
 
-<script>
-// Site search
-     
-const pages = [
-    { name: "Home", url: "index.html", keywords: ["home", "mission", "vision", "belong and begin"] },
-    { name: "Register", url: "register.html", keywords: ["register", "volunteer", "sign up"] },
-    { name: "Facility", url: "facility.html", keywords: ["facility", "accessible", "games", "sensory"] },
-    { name: "Our Impact", url: "impact.html", keywords: ["impact", "community", "testimonials"] },
-    { name: "Events", url: "events.html", keywords: ["events", "upcoming", "schedule"] },
-    { name: "Donate", url: "donate.html", keywords: ["donate", "sponsor", "support"] },
-    { name: "Media", url: "media.html", keywords: ["media", "flyers", "photos"] },
-    { name: "Contact", url: "contact.html", keywords: ["contact", "email", "reach out"] },
-];
+<section id="mission">
+  <h3>Our Mission</h3>
+  <p>Belong & Begin is dedicated to making Novi High School and its community more inclusive by providing a safe, adaptive space for individuals with disabilities and all students to relax, play, and build meaningful connections.</p>
+</section>
 
-document.getElementById('searchForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const query = document.getElementById('searchInput').value.toLowerCase();
-    for (let page of pages) {
-        for (let keyword of page.keywords) {
-            if (query.includes(keyword)) {
-                window.location.href = page.url;
-                return;
-            }
-        }
-    }
-    alert('No results found. Please try another keyword.');
-});
-</script>
+<section id="values">
+  <h3>Our Core Values</h3>
+  <p>Inclusion, Accessibility, Community, Play, and Respect guide everything we build and offer, ensuring every student has a place where they belong and can begin thriving.</p>
+</section>
 
+<footer>
+  © 2025 Belong & Begin | Novi High School | belongandbegin@gmail.com
+</footer>
 
-
-    <main>
-        <section id="mission">
-            <h2>Our Mission</h2>
-            <p>
-                Belong & Begin is a student-led project focused on making Novi High School a more inclusive and welcoming place for all students. We aim to create a facility that serves as both a rest center and a recreational space for individuals with and without disabilities. By modifying classic games for accessibility and providing a safe, supportive environment, we promote relaxation, fun, and socialization for kids and families in our community.
-            </p>
-        </section>
-
-        <section id="survey">
-            <h2>Take Our Community Survey</h2>
-            <p>
-                Help us serve you better by taking our quick community survey!
-            </p>
-            <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank">
-                <button>Take the Survey</button>
-            </a>
-        </section>
-
-        <section id="video-announcement">
-            <h2>Video Coming July 31</h2>
-            <p>
-                Stay tuned for our launch video explaining our project and showing how you can get involved!
-            </p>
-        </section>
-
-        <section id="hours">
-            <h2>Facility Hours</h2>
-            <ul>
-                <li> Coming Soon!!!</li>
-                
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <hr/>
-        <p>© 2025 Belong & Begin - Novi High School</p>
-    </footer>
+<script src="script.js"></script>
 </body>
 </html>
+
